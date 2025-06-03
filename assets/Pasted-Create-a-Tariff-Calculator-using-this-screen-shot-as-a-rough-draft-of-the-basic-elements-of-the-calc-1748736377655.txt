@@ -1,0 +1,124 @@
+Create a Tariff Calculator using this screen shot as a rough draft of the basic elements of the calculator. Make this calculator look super attractive and professional with blue and grey professional colors. 
+Use the color palette as attached and also make it mobile responsive. 
+The calculator will perform as follows:
+	There will be 8 required fields and special notes on each one:
+o	HTS Code
+	This code must be provided. The input box should contain a “lookup” magnifying glass on the upper right corner of the box that leads the user to the following website:
+•	https://hts.usitc.gov/
+	A pop up should display as soon as the user places their cursor on in the HTS Code input box that says. “Please click on the magnifying glass to go to the “Harmonized Tariff Schedule” and look up your HTS code. The Code must be 6 numerical digits.”
+	HTS codes should appear as follows when entered
+•	####.##.##
+•	Example when the user enters 96039080 it should appear as “9603.90.80” in the input box
+o	Country of Origin 
+	This should be in the form of a drop down and contain the following values
+•	Algeria
+•	Angola
+•	Bangladesh
+•	Bosnia and Herzegovina
+•	Botswana
+•	Brunei
+•	Cambodia
+•	Cameroon
+•	Chad
+•	China
+•	Côte d`Ivoire
+•	Democratic Republic of the Congo
+•	Equatorial Guinea
+•	European Union
+•	Falkland Islands
+•	Fiji
+•	Guyana
+•	India
+•	Indonesia
+•	Iraq
+•	Israel
+•	Japan
+•	Jordan
+•	Kazakhstan
+•	Laos
+•	Lesotho
+•	Libya
+•	Liechtenstein
+•	Madagascar
+•	Malawi
+•	Malaysia
+•	Mauritius
+•	Moldova
+•	Mozambique
+•	Myanmar (Burma)
+•	Namibia
+•	Nauru
+•	Nicaragua
+•	Nigeria
+•	North Macedonia
+•	Norway
+•	Pakistan
+•	Philippines
+•	Serbia
+•	South Africa
+•	South Korea
+•	Sri Lanka
+•	Switzerland
+•	Syria
+•	Taiwan
+•	Thailand
+•	Tunisia
+•	Vanuatu
+•	Venezuela
+•	Vietnam
+•	Zambia
+•	Zimbabwe
+
+o	Declared Value
+	This should be stated in US Dollars
+o	Shipping Method
+	This should be in the form of a dropdown list and should contain the following:
+•	Air Freight
+•	Sea Freight
+•	Land Transporting values
+•	
+o	Shipping Costs
+	Should be stated in US dollars
+o	Cargo Insurance Cost
+	Should be stated in US dollars
+The calculator will calculate the following:
+	Total Combined Tariff/Duty rate
+o	This is equal to the summation of the following tariff duty rates
+	Base Duty Rate
+	Global Baseline Tariff
+	Reciprocal Tariff (if applicable)
+	Section 301 Tariff (if applicable)
+	Total Landed Cost
+o	This is equal to the summation of the following
+	Total Declared Value
+	Total Shipping Cost
+	Cargo Insurance Cost
+
+	The Total Tariff/Duty Cost
+o	This is equal to the “Total Landed Cost” multiplied by the “Total Combined Tariff/Duty Rate”
+	The Calculator is going to calculate the MPF fee
+o	This is calculated by using the following method.
+	a rate of .3464% multiplied by the Declared Value provided.
+	With a default minimum fee calculation of $32.71
+	A maximum fee calculation of $634.62
+	The Calculator is going to calculate the  HMF fee
+o	This is calculated by using the following method and Only applies if the user selects “Sea Freight” as a shipping method. If the user selects any other shipping method besides “Sea Freight” than the HMF fee defaults to $0.
+	a rate of .125% multiplied by the Declared Value provided.
+
+The following reference tables will be provided. 
+	A table called the “HTS code table” will be provided where an HTS code will correspond to a description and the “base duty rate.”
+	Another table will be provided that is related to a reciprocal tariff rates. The table is called “Reciprocal tariff table”  will have a country of origin that corresponds to the tariff rate listed in the table. If a user puts in a country of origin that is located on the reciprocal tariff table, the Reciprocal tariff rate will apply to the calculation. For example, if the user puts in the country of origin as “China” the reciprocal tariff rate will be 34%. 
+	Another table will be provided related to Section 301 tariffs. This tariff rate only applies when the user lists the country of origin as “China” and provides a HTS code that is also listed in the “Section 301 tariff” table. For example. If a user lists HTS code 9603.90.80 and also states the country of origin as China, than the calculator will lookup this  HTS code on the “Section 301 tariff” table and see that that HTS code has a corresponding 7.5% tariff rate on the “Section 301 tariff table”. If the user lists “China” as the country of Origin, but the HTS code listed does not appear on the “Section 301 tariff” table, then the tariff rate will default to zero.
+	Lastly the “Global Baseline Tariff”  of 10%, will apply to all calculations except if the user states “Canada” or “Mexico” as their country of origin. 
+
+Add a disclaimer at the bottom of the calculator in red font with the word “Disclaimer” in bold red font. 
+Disclaimer
+This publication and calculator is provided for general information purposes and does not constitute legal, tax or other professional advice from Swift.CPA, Accounting Business Optimization LLC, or its subsidiaries and its affiliates, and it is not intended as a substitute for obtaining advice from a financial advisor or any other professional.
+This calculator provides estimates only. Final import duties and fees may vary based on actual customs valuation and current regulations. Always consult with licensed customs brokers or trade professionals for official determinations.
+Special Note: This calculator does not include the following duties in its calculation. Please research independently of this calculator if these additional duties apply to the product you are assessing:
+•	• Section 232 Duties (National Security Tariffs) – applies to certain steel and aluminum products
+•	• Section 201 Safeguard Duties
+•	• Anti-Dumping Duties (ADD)
+•	• Countervailing Duties (CVD)
+The calculator also does not consider tariff calculations for countries of origin without a NTR status such as North Korea, Cuba, Russia and Belarus. This calculator does not account or provide calculations for any countries with special trade agreements with the United States. 
+ 

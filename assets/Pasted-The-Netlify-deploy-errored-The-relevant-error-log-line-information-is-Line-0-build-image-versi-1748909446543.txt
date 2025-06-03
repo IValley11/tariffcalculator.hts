@@ -1,0 +1,75 @@
+The Netlify deploy errored. The relevant error log line information is:
+
+Line 0: build-image version: 0e04ecb664f5f97dc8ac7f3de278d0e6f81cd9c2 (noble)
+Line 1: buildbot version: 0adda441a46f5fcbd50adabc3d352011c7a84c94
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/IValley11/TariffCalculatorHTS
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom publish path detected. Proceeding with the specified path: 'dist'
+Line 9: Custom build command detected. Proceeding with the specified command: 'npm run build'
+Line 10: Starting to install dependencies
+Line 11: Python version set to 3.13.3
+Line 12: Ruby version set to 3.4.3
+Line 13: Go version set to 1.24.3
+Line 58:   production
+Line 59: [96m[1m​[22m[39m
+Line 60: [96m[1mbuild.command from netlify.toml                               [22m[39m
+Line 61: [96m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 62: ​
+Line 63: [36m$ npm run build[39m
+Line 64: > rest-express@1.0.0 build
+Line 65: > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+Line 66: [36mvite v5.4.14 [32mbuilding for production...[36m[39m
+Line 67: [32m✓[39m 0 modules transformed.
+Line 68: [31mx[39m Build failed in 7ms
+Line 69: [31merror during build:
+Line 70: [31mCould not resolve entry module "client/index.html".[31m
+Line 71:     at getRollupError (file:///opt/build/repo/node_modules/rollup/dist/es/shared/parseAst.js:396:41)
+Line 72:     at error (file:///opt/build/repo/node_modules/rollup/dist/es/shared/parseAst.js:392:42)
+Line 73:     at ModuleLoader.loadEntryModule (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:20086:20)
+Line 74:     at async Promise.all (index 0)[39m
+Line 75: [91m[1m​[22m[39m
+Line 76: [91m[1m"build.command" failed                                        [22m[39m
+Line 77: [91m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 78: ​
+Line 79:   [31m[1mError message[22m[39m
+Line 80:   Command failed with exit code 1: npm run build
+Line 81: ​
+Line 82:   [31m[1mError location[22m[39m
+Line 83:   In build.command from netlify.toml:
+Line 84:   npm run build
+Line 85: ​
+Line 86:   [31m[1mResolved config[22m[39m
+Line 87:   build:
+Line 88:     command: npm run build
+Line 89:     commandOrigin: config
+Line 90:     environment:
+Line 91:       - NODE_VERSION
+Line 92:     publish: /opt/build/repo/dist
+Line 93:     publishOrigin: config
+Line 94:   redirects:
+Line 95:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+Line 96: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 97: Failing build: Failed to build site
+Line 98: Finished processing build request in 15.421s
+Line 99: Failed during stage 'building site': Build script returned non-zero exit code: 2
+
+Netlify has analyzed the error and provided the following guidance:
+
+### Diagnosis
+[line 70](#L70): The build failed with the error message "Could not resolve entry module 'client/index.html'."
+
+### Solution
+The error is likely occurring because the build script is unable to locate the entry module 'client/index.html'. To resolve this issue:
+
+1. Ensure that the 'client/index.html' file exists in the correct location in your project's directory.
+2. Verify that the file path to 'client/index.html' is accurate and matches the actual file location.
+3. If 'client/index.html' is part of another source directory, update the path in the build script to point to the correct location.
+
+After checking these points, run the build again to see if the issue is resolved.
